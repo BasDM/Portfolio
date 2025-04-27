@@ -3,7 +3,7 @@ import Spline from '@splinetool/react-spline';
 function Home() {
     function onMousePress(e:any) {
         if (e.target.name === 'ProjectsFolder') {
-          alert('I have been clicked!');
+          console.log('I have been clicked!');
         }
     }
     return (
