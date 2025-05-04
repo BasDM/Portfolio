@@ -1,7 +1,7 @@
 
 function Projects() {
     return (
-        <div>
+        <div className="flex flex-col h-screen p-5">
             <h1>Projects</h1>
             <p>Here are some of my projects:</p>
             <ul>

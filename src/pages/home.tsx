@@ -1,9 +1,11 @@
 import Spline from '@splinetool/react-spline';
+import { useNavigate } from 'react-router';
 
 function Home() {
+    const navigate = useNavigate();
     function onMousePress(e:any) {
         if (e.target.name === 'ProjectsFolder') {
-          console.log('I have been clicked!');
+          navigate('/projects');
         }
     }
     return (
