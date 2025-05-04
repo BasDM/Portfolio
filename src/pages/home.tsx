@@ -5,7 +5,7 @@ function Home() {
     const navigate = useNavigate();
     function onMousePress(e:any) {
         if (e.target.name === 'ProjectsFolder') {
-          navigate('/projects');
+            navigate('/projects');
         }
     }
     return (
