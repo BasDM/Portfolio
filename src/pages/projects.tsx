@@ -1,4 +1,5 @@
 import ProjectCard from "../components/project_card";
+import periskal from "../assets/periskal.png";
 
 function Projects() {
     return (
@@ -12,6 +13,11 @@ function Projects() {
                 title="Another Project" 
                 description="This is another project with a shorter description."
                 coverImage="https://airmagique.net/wp-content/uploads/2024/09/danse-macabre-efteling-concept-art-zoomed-in-joseph-charlatan.jpg?w=1024"
+            />
+            <ProjectCard
+                title="Periskal Academy"
+                description="Test"
+                coverImage= {periskal}
             />
         </div>
     );
