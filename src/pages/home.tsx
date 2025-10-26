@@ -16,7 +16,7 @@ function Home() {
 	}
 	return (
 		// attach ref and block touch-action so pinch/scroll don't trigger browser gestures
-		<div ref={containerRef} className="w-full h-[calc(100vh-4rem)]">
+		<div ref={containerRef} className="w-full h-[calc(100vh-4rem)] bg-gray-900">
 			<Spline
 				scene="https://prod.spline.design/3Evwac6TAsSRYVwC/scene.splinecode"
 				onSplineMouseDown={onMousePress}

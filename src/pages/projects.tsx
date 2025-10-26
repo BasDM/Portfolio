@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProjectCard from "../components/project_card";
 import periskal from "../assets/periskal.png";
 import GameDevVid from "../assets/GameDev.mp4";
+import StarsBackground from "../components/StarsBackground";
 
 function Projects() {
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -36,11 +37,13 @@ function Projects() {
 	};
 
 	return (
-		<div className="flex flex-col items-center h-[calc(100vh-4rem)] bg-gray-900 text-gray-100 p-10">
+		<div className="relative flex flex-col items-center h-[calc(100vh-4rem)] bg-gray-900 text-gray-100 p-10">
+			{/* subtle moving stars background */}
+			<StarsBackground className="-z-1" />
 			{/* Header Section */}
-			<div className="max-w-3xl text-center mb-12">
+			<div className="max-w-3xl text-center mb-12 z-0">
 				<h1 className="text-4xl font-bold mb-2 text-white">My Projects</h1>
-				<p className="text-gray-400 text-base">
+				<p className="text-gray-100 text-base">
 					A selection of my work. From software projects to creative
 					experiments.
 				</p>
