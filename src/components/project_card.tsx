@@ -63,7 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 							/>
 						)}
 						{/* subtle gradient overlay to help text contrast */}
-						<div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 to-transparent" />
+						<div className="absolute inset-0 pointer-events-none bg-linear-to-t from-black/60 to-transparent" />
 					</>
 				)}
 			</div>
