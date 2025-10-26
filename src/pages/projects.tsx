@@ -77,7 +77,7 @@ function Projects() {
 						{projects.map((project, index) => (
 							<div
 								key={index}
-								className="w-full flex-shrink-0 flex justify-center px-0">
+								className="w-full shrink-0 flex justify-center px-0">
 								<div
 									className={`transition-all duration-500 ${
 										index === currentIndex
