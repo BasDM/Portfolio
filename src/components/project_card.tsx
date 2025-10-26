@@ -30,6 +30,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 			try {
 				videoRef.current.pause();
 				videoRef.current.currentTime = 0;
+				videoRef.current.volume = 0.25;
 			} catch {}
 		}
 	}, [isVideo, shouldAutoplay]);
