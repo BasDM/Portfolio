@@ -36,23 +36,22 @@ function Projects() {
 	};
 
 	return (
-		<div className="flex flex-col items-center h-[calc(100vh-4rem)] bg-gray-50 text-black p-10">
+		<div className="flex flex-col items-center h-[calc(100vh-4rem)] bg-gray-900 text-gray-100 p-10">
 			{/* Header Section */}
 			<div className="max-w-3xl text-center mb-12">
-				<h1 className="text-4xl font-bold mb-2">My Projects</h1>
-				<p className="text-gray-600 text-base">
-					A selection of my work — from software projects to creative
+				<h1 className="text-4xl font-bold mb-2 text-white">My Projects</h1>
+				<p className="text-gray-400 text-base">
+					A selection of my work. From software projects to creative
 					experiments.
 				</p>
 			</div>
 
 			{/* Carousel Section */}
-			<div className="relative w-full max-w-4xl flex items-center justify-center">
+			<div className="relative w-full max-w-4xl flex items-center justify-center px-6">
 				{/* Left Arrow */}
 				<button
 					onClick={prevProject}
-					className="absolute left-0 z-10 bg-white hover:bg-gray-100 text-gray-700 hover:text-gray-900 p-3 rounded-full shadow-md transition-all duration-200 transform hover:scale-110"
-					style={{ transform: "translateX(-50%)" }}>
+					className="absolute left-0 z-10 transform -translate-x-12 bg-gray-800 hover:bg-gray-700 text-gray-100 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110">
 					<svg
 						className="w-6 h-6"
 						fill="none"
@@ -75,7 +74,7 @@ function Projects() {
 						{projects.map((project, index) => (
 							<div
 								key={index}
-								className="w-full flex-shrink-0 px-6 flex justify-center">
+								className="w-full flex-shrink-0 flex justify-center px-0">
 								<div
 									className={`transition-all duration-500 ${
 										index === currentIndex
@@ -99,8 +98,7 @@ function Projects() {
 				{/* Right Arrow */}
 				<button
 					onClick={nextProject}
-					className="absolute right-0 z-10 bg-white hover:bg-gray-100 text-gray-700 hover:text-gray-900 p-3 rounded-full shadow-md transition-all duration-200 transform hover:scale-110"
-					style={{ transform: "translateX(50%)" }}>
+					className="absolute right-0 z-10 transform translate-x-12 bg-gray-800 hover:bg-gray-700 text-gray-100 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110">
 					<svg
 						className="w-6 h-6"
 						fill="none"
@@ -124,8 +122,8 @@ function Projects() {
 						onClick={() => setCurrentIndex(index)}
 						className={`w-3 h-3 rounded-full transition-all duration-200 ${
 							index === currentIndex
-								? "bg-blue-600 scale-110"
-								: "bg-gray-300 hover:bg-gray-400"
+								? "bg-blue-500 scale-110"
+								: "bg-gray-600 hover:bg-gray-500"
 						}`}
 					/>
 				))}
