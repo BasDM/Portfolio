@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 interface ProjectCardProps {
 	title: string;
@@ -6,6 +6,7 @@ interface ProjectCardProps {
 	coverImage?: string;
 	isVideo?: boolean;
 	githubLink?: string;
+	shouldAutoplay?: boolean; // new prop
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -14,21 +15,44 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 	coverImage,
 	isVideo,
 	githubLink,
+	shouldAutoplay = false,
 }) => {
+	const videoRef = useRef<HTMLVideoElement | null>(null);
+
+	useEffect(() => {
+		if (!isVideo || !videoRef.current) return;
+
+		if (shouldAutoplay) {
+			videoRef.current.play().catch(() => {
+				/* autoplay blocked by browser; user can use controls */
+			});
+		} else {
+			try {
+				videoRef.current.pause();
+				videoRef.current.currentTime = 0;
+			} catch {}
+		}
+	}, [isVideo, shouldAutoplay]);
+
 	return (
-		<div className="group relative bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 w-200 mx-auto border border-gray-200">
+		<div className="group relative bg-white rounded-2xl overflow-hidden shadow-md w-200 mx-auto border border-gray-200">
 			{/* Media Section */}
 			<div className="relative w-full h-100 overflow-hidden">
 				{coverImage && (
 					<>
 						{isVideo ? (
 							<video
+								ref={videoRef}
 								src={coverImage}
 								className="w-full h-full object-cover"
-								muted
+								controls
+								autoPlay={shouldAutoplay}
 								playsInline
 								loop
 								preload="metadata"
+								controlsList="nodownload"
+								disablePictureInPicture
+								onContextMenu={(e) => e.preventDefault()}
 							/>
 						) : (
 							<img
@@ -39,8 +63,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 						)}
 					</>
 				)}
-				{/* Soft overlay on hover */}
-				<div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 			</div>
 
 			{/* Content */}

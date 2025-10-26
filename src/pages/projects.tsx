@@ -9,7 +9,8 @@ function Projects() {
 	const projects = [
 		{
 			title: "Periskal Academy",
-			description: "An eductational platform built for skippers to learn the basics of navigating using Periskal software. Built with Java Spring Boot, Angular and MySQL and deployed using Docker.",
+			description:
+				"An eductational platform built for skippers to learn the basics of navigating using Periskal software. Built with Java Spring Boot, Angular and MySQL and deployed using Docker.",
 			isVideo: false,
 			coverImage: periskal,
 			githubLink: "https://github.com/SkyPromp/SoftwareProjectPeriskalAcademy",
@@ -87,6 +88,7 @@ function Projects() {
 										isVideo={project.isVideo}
 										coverImage={project.coverImage}
 										githubLink={project.githubLink}
+										shouldAutoplay={index === currentIndex && project.isVideo}
 									/>
 								</div>
 							</div>
