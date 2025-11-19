@@ -37,11 +37,11 @@ function Projects() {
 	};
 
 	return (
-		<div className="relative flex flex-col items-center h-[calc(100vh-4rem)] bg-gray-900 text-gray-100 p-10">
+		<div className="relative flex flex-col items-center h-[calc(100vh-4rem)] bg-gray-900 text-gray-100 py-6">
 			{/* subtle moving stars background */}
 			<StarsBackground className="-z-1" />
 			{/* Header Section */}
-			<div className="max-w-3xl text-center mb-12 z-0">
+			<div className="max-w-3xl text-center mb-8 z-0">
 				<h1 className="text-4xl font-bold mb-2 text-white">My Projects</h1>
 				<p className="text-gray-100 text-base">
 					A selection of my work. From software projects to creative
@@ -50,16 +50,18 @@ function Projects() {
 			</div>
 
 			{/* Carousel Section */}
-			<div className="relative w-full max-w-4xl flex items-center justify-center px-6">
+			<div className="relative w-full max-w-2xl flex items-center justify-center">
 				{/* Left Arrow */}
 				<button
 					onClick={prevProject}
-					className="absolute left-0 z-10 transform -translate-x-12 bg-gray-800 hover:bg-gray-700 text-gray-100 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110">
+					className="absolute left-0 z-10 transform -translate-x-12 bg-gray-800 hover:bg-gray-700 text-gray-100 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110"
+				>
 					<svg
 						className="w-6 h-6"
 						fill="none"
 						stroke="currentColor"
-						viewBox="0 0 24 24">
+						viewBox="0 0 24 24"
+					>
 						<path
 							strokeLinecap="round"
 							strokeLinejoin="round"
@@ -70,20 +72,24 @@ function Projects() {
 				</button>
 
 				{/* Carousel Container */}
-				<div className="w-full overflow-hidden">
+				<div className="w-full overflow-hidden flex justify-center items-center">
 					<div
 						className="flex transition-transform duration-500 ease-in-out"
-						style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+						style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+					>
 						{projects.map((project, index) => (
 							<div
 								key={index}
-								className="w-full shrink-0 flex justify-center px-0">
+								className="w-full shrink-0 flex justify-center px-0"
+							>
 								<div
-									className={`transition-all duration-500 ${
+									className={`transition-all duration-500 max-w-md max-h-[32rem] w-full ${
 										index === currentIndex
 											? "opacity-100 scale-100"
 											: "opacity-30 scale-95"
-									}`}>
+									}`}
+									style={{ overflow: "hidden" }}
+								>
 									<ProjectCard
 										title={project.title}
 										description={project.description}
@@ -101,12 +107,14 @@ function Projects() {
 				{/* Right Arrow */}
 				<button
 					onClick={nextProject}
-					className="absolute right-0 z-10 transform translate-x-12 bg-gray-800 hover:bg-gray-700 text-gray-100 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110">
+					className="absolute right-0 z-10 transform translate-x-12 bg-gray-800 hover:bg-gray-700 text-gray-100 p-3 rounded-full shadow-md transition-all duration-200 hover:scale-110"
+				>
 					<svg
 						className="w-6 h-6"
 						fill="none"
 						stroke="currentColor"
-						viewBox="0 0 24 24">
+						viewBox="0 0 24 24"
+					>
 						<path
 							strokeLinecap="round"
 							strokeLinejoin="round"
