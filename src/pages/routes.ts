@@ -4,5 +4,5 @@ export default [
 	//route("route", "./file.tsx")
 	index("./App.tsx"),
 	route("/", "./pages/home.tsx"),
-	route("aboutme", "./pages/aboutMe.tsx"),
+	route("/aboutme", "./pages/aboutMe.tsx"),
 ];
