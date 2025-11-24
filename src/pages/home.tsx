@@ -22,7 +22,7 @@ function Home() {
 			const obj = splineRef.current.findObjectByName("ProjectsFolder");
 			if (obj) {
 				setTimeout(() => {
-					navigate("/aboutMe");
+					navigate("/aboutme");
 				}, 3300);
 			}
 		}
